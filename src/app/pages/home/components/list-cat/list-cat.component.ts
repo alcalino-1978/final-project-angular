@@ -26,6 +26,7 @@ export class ListCatComponent {
     this.requestService.getCats().subscribe(
       (response: CatModelAPI[]) => {
         this.catList = response;
+        console.log(response)
         this.isLoading = false;
       }, (error) => {
         console.log('Algo ha petado y estoy en el Componente');

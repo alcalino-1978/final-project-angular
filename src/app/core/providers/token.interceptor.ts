@@ -12,7 +12,9 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor() {
+
+  }
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token: string = localStorage.getItem('token') as string;
@@ -21,10 +23,9 @@ export class TokenInterceptor implements HttpInterceptor {
     request = req.clone({
       setHeaders: {
         authorization: `Bearer ${ token }`,
-        'X-Api-Key': environment.CATS_API_KEY
+        'X-Api-Key': environment.CATS_API_KEY as string
       }
     });
-
     return next.handle(request);
   }
 }
