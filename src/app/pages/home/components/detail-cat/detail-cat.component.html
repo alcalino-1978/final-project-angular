@@ -1,0 +1,10 @@
+<div *ngIf="catDetail">
+  <p>{{ catDetail.name }}</p>
+  <p>{{ catDetail.id }}</p>
+  <p>{{ catDetail.weight.metrical }}</p>
+  <p>{{ catDetail.origin }}</p>
+  <p>{{ catDetail.description }}</p>
+  <p>{{ catDetail.life_span }}</p>
+  <p>{{ catDetail.adaptability }}</p>
+  <img [src]="'https://cdn2.thecatapi.com/images/'+ catDetail.reference_image_id + '.jpg'">
+</div>
