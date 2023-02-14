@@ -6,6 +6,8 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -16,13 +18,12 @@ export class TokenInterceptor implements HttpInterceptor {
     const token: string = localStorage.getItem('token') as string;
 
     let request = req;
-    if (token) {
-      request = req.clone({
-        setHeaders: {
-          authorization: `Bearer ${ token }`
-        }
-      });
-    }
+    request = req.clone({
+      setHeaders: {
+        authorization: `Bearer ${ token }`,
+        'X-Api-Key': environment.CATS_API_KEY
+      }
+    });
 
     return next.handle(request);
   }

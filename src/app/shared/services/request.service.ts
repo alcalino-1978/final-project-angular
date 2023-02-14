@@ -14,18 +14,10 @@ export class RequestService {
   ) { }
 
   getCats(): Observable<CatModelAPI[]> {
-    return this.httpClient.get<any>(environment.url + 'breeds', {
-      headers: {
-        'X-Api-Key': environment.CATS_API_KEY
-      }
-    })
+    return this.httpClient.get<any>(environment.url + 'breeds')
   }
   getCatId(id:any): Observable<CatModelAPI> {
-    return this.httpClient.get<any>(environment.url + 'breeds/' + id, {
-      headers: {
-        'X-Api-Key': environment.CATS_API_KEY
-      }
-    })
+    return this.httpClient.get<any>(environment.url + 'breeds/' + id)
   }
 
 }
