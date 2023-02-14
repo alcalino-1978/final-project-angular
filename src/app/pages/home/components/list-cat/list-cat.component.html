@@ -1,0 +1,15 @@
+<p>list-cat works!</p>
+
+<p *ngIf="isLoading">loading ...</p>
+
+<ul *ngIf="!isLoading">
+  <li *ngFor="let cat of catList">
+    <!-- <p>{{ cat.id }} - {{ cat.name }}</p> -->
+    <!-- <p>{{ cat.description }}</p> -->
+    <div (click)="getCatDetail(cat.id)">
+      <p>{{ cat.name }}</p>
+      <img [src]="cat.image?.url" width="200px">
+    </div>
+  </li>
+</ul>
+
