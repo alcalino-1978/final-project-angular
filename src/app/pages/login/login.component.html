@@ -1,0 +1,40 @@
+<p>login works!</p>
+<div class="example-container">
+  <div class="form-container">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="userLoginForm">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="email">(*) Email:</mat-label>
+        <input matInput type="text" id="email" formControlName="email" placeholder="Email"/>
+        <mat-error *ngIf="!emailFormControl?.valid && emailFormControl?.dirty || isSubmitted">
+          <p *ngIf="emailFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="emailFormControl?.errors?.['maxlength']">
+            No más de 20 caracteres
+          </p>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="password">(*) Password:</mat-label>
+        <input matInput type="password" id="password" formControlName="password" />
+        <mat-error *ngIf="!passwordFormControl?.valid && passwordFormControl?.dirty || isSubmitted">
+          <p *ngIf="passwordFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['pattern']">
+            La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['minlength']">
+            Este campo tiene que tener al menos {{ passwordFormControl.errors?.['minlength']?.requiredLength }} caracteres
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['maxlength']">
+            Este campo tiene que tener como mucho {{ passwordFormControl.errors?.['maxlength']?.requiredLength }} caracteres
+          </p>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">Submit</button>
+    </form>
+
+  </div>
+</div>

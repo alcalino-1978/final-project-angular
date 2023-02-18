@@ -1,0 +1,21 @@
+.main-header {
+  width: 100%;
+  padding-right: 0;
+  justify-content: space-between;
+  .main-header__logo {
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    &-img {
+      width: 100%;
+    }
+  }
+}
+
+.switch-theme {
+  height: 48px;
+  .mat-icon {
+    height: auto;
+    font-size: 16px;
+  }
+}

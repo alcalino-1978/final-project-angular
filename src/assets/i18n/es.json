@@ -2,5 +2,24 @@
   "HELLO": "Hola!",
   "CHARACTER-LIST": {
     "TITLE": "Listado de characters"
+  },
+  "MAIN-MENU": {
+    "PROFILE": "Perfil",
+    "LOGOUT": "Cerrar Sesión"
+  },
+  "FORMS": {
+    "NAME": "Nombre",
+    "LASTNAME": "Apellidos",
+    "EMAIL": "Correo",
+    "PASSWORD": "Contraseña",
+    "REPASSWORD": "Repetir contraseña:",
+    "PHONENUMBER": "Teléfono",
+    "SUBMIT": "Enviar",
+    "FIELD-REQUIRED": "Este campo es obligatorio",
+    "FIELD-PASSWORD": "La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número",
+    "FIELD-PASSWORD-MIN": "Este campo tiene que tener al menos {{ value1 }} caracteres",
+    "FIELD-PASSWORD-MAX": "Este campo tiene que tener como mucho {{ value1 }} caracteres",
+    "FIELD-PASSWORD-STRENGTH": "Resistencia de contraseña:",
+    "FIELD-PASSWORD-NOT-MATCH": "Las contraseñas no coinciden"
   }
 }

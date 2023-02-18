@@ -2,5 +2,24 @@
   "HELLO": "Hello!",
   "CHARACTER-LIST": {
     "TITLE": "Character list"
+  },
+  "MAIN-MENU": {
+    "PROFILE": "Profile",
+    "LOGOUT": "Logout"
+  },
+  "FORMS": {
+    "NAME": "Name",
+    "LASTNAME": "Last Name",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REPASSWORD": "Repeat password:",
+    "PHONENUMBER": "Phone Number",
+    "SUBMIT": "Submit",
+    "FIELD-REQUIRED": "This field is required",
+    "FIELD-PASSWORD": "The password must contain at least 8 characters, one uppercase, one lowercase and one number",
+    "FIELD-PASSWORD-MIN": "The password must contain at least {{ value1 }} characters long",
+    "FIELD-PASSWORD-MAX": "This field must be at most {{ value1 }} characters long",
+    "FIELD-PASSWORD-STRENGTH": "Password strength:",
+    "FIELD-PASSWORD-NOT-MATCH": "Passwords do not match"
   }
 }

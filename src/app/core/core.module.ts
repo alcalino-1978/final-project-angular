@@ -1,13 +1,20 @@
 import { TokenInterceptor } from './providers/token.interceptor';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+
+import { HeaderComponent } from './components/header/header.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -16,14 +23,19 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    ToolbarComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    MatMenuModule,
     MatButtonModule,
+    MatCardModule,
+    MatSlideToggleModule,
+    RouterModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -40,7 +52,7 @@ export function createTranslateLoader(http: HttpClient) {
     }
   ],
   exports: [
-    ToolbarComponent
+    HeaderComponent
   ]
 })
 export class CoreModule {

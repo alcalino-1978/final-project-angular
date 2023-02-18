@@ -6,6 +6,11 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '@shared/shared.module';
 import { ListCatComponent } from './components/list-cat/list-cat.component';
 
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+
 
 @NgModule({
   declarations: [
@@ -14,8 +19,13 @@ import { ListCatComponent } from './components/list-cat/list-cat.component';
   ],
   imports: [
     CommonModule,
+    HomeRoutingModule,
     SharedModule,
-    HomeRoutingModule
+    // Material
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatSlideToggleModule,
   ]
 })
 export class HomeModule { }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RequestService } from '@shared/services/request.service';
+import { CatApiService } from '@shared/services/catApi.service';
 import { CatModelAPI } from 'src/app/models/cat.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class DetailCatComponent {
   public isLoading: boolean = false;
   constructor(
     private activatedRouter: ActivatedRoute,
-    private requestService : RequestService,
+    private catApiService : CatApiService,
   ) {
 
 
@@ -29,7 +29,7 @@ export class DetailCatComponent {
 
   getCat(id:any): void {
     this.isLoading = true;
-    this.requestService.getCatId(id).subscribe(
+    this.catApiService.getCatId(id).subscribe(
       (response: CatModelAPI) => {
         this.catDetail = response;
         this.isLoading = false;

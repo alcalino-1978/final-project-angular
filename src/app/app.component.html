@@ -1,2 +1,8 @@
-<app-toolbar (changeLanguage)="setLang($event)"></app-toolbar>
-<router-outlet></router-outlet>
+<div [ngClass]="{'dark-theme': isDarkTheme | async}">
+  <div class="mat-app-background">
+    <app-header (changeLanguage)="setLang($event)"></app-header>
+    <div class="container px-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

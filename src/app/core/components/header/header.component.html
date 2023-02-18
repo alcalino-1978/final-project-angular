@@ -1,0 +1,33 @@
+<mat-toolbar class="main-header">
+  <a [routerLink]="['/']" class="main-header__logo">
+    <img class="main-header__logo-img" src="/assets/logo.svg" alt="Logo">
+  </a>
+  <div class="d-flex">
+    <button mat-icon-button (click)="switchTheme('light-theme');showTheme.light = !showTheme.light; showTheme.dark = !showTheme.dark;"
+      *ngIf="showTheme.light"><mat-icon>brightness_5</mat-icon></button>
+    <button mat-icon-button (click)="switchTheme('dark-theme');showTheme.light = !showTheme.light; showTheme.dark = !showTheme.dark;"
+      *ngIf="showTheme.dark"><mat-icon>bedtime</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeLang('es')">
+        <span>Español</span>
+      </button>
+      <button mat-menu-item (click)="changeLang('en')">
+        <span>English</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="mainMenu" aria-label="Example icon-button with a menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #mainMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/profile']">
+        <span>{{ 'MAIN-MENU.PROFILE' | translate }}</span>
+      </button>
+      <button mat-menu-item>
+        <span>{{ 'MAIN-MENU.LOGOUT' | translate }}</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

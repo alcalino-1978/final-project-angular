@@ -5,11 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -17,11 +18,14 @@ import { LoaderComponent } from './components/loader/loader.component';
     FormsModule,
     ReactiveFormsModule,
     // Material
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+
+
   ],
   exports: [
     TranslateModule,
-    LoaderComponent
+    LoaderComponent,
+
   ]
 })
 export class SharedModule { }

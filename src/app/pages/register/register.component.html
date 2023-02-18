@@ -1,0 +1,86 @@
+<p>register works!</p>
+<div class="example-container">
+  <div class="form-container">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="userLoginForm">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="name">(*) Name:</mat-label>
+        <!-- <mat-label for="name">(*) {{ 'FORMS.NAME' | translate }}:</mat-label> -->
+        <input matInput type="text" id="name" formControlName="name" placeholder="name"/>
+        <mat-error *ngIf="!nameFormControl?.valid && nameFormControl?.dirty || isSubmitted">
+          <p *ngIf="nameFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="emailFormControl?.errors?.['maxlength']">
+            No más de 20 caracteres
+          </p>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="lastName">(*) Last Name:</mat-label>
+        <input matInput type="text" id="lastName" formControlName="lastName" placeholder="lastName"/>
+        <mat-error *ngIf="!lastNameFormControl?.valid && lastNameFormControl?.dirty || isSubmitted">
+          <p *ngIf="lastNameFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="lastNameFormControl?.errors?.['maxlength']">
+            No más de 20 caracteres
+          </p>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="email">(*) Email:</mat-label>
+        <input matInput type="text" id="email" formControlName="email" placeholder="Email"/>
+        <mat-error *ngIf="!emailFormControl?.valid && emailFormControl?.dirty || isSubmitted">
+          <p *ngIf="emailFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="emailFormControl?.errors?.['maxlength']">
+            No más de 20 caracteres
+          </p>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="password">(*) Password:</mat-label>
+        <input matInput type="password" id="password" formControlName="password" />
+        <mat-error *ngIf="!passwordFormControl?.valid && passwordFormControl?.dirty || isSubmitted">
+          <p *ngIf="passwordFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['pattern']">
+            La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['minlength']">
+            Este campo tiene que tener al menos {{ passwordFormControl.errors?.['minlength']?.requiredLength }} caracteres
+          </p>
+          <p *ngIf="passwordFormControl?.errors?.['maxlength']">
+            Este campo tiene que tener como mucho {{ passwordFormControl.errors?.['maxlength']?.requiredLength }} caracteres
+          </p>
+        </mat-error>
+        <ng-container *ngIf="passwordFormControl.value">
+          <p>Resistencia de contraseña:</p>
+          <div class="strength" [ngClass]="{'low': strength > 1, 'mid': strength > 2, 'hight': strength > 3}">
+            <span class="level" *ngIf="strength > 0"></span>
+            <span class="level" *ngIf="strength > 1"></span>
+            <span class="level" *ngIf="strength > 2"></span>
+            <span class="level" *ngIf="strength > 3"></span>
+          </div>
+        </ng-container>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label for="phoneNumber">(*) phoneNumber:</mat-label>
+        <input matInput type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="phoneNumber"/>
+        <mat-error *ngIf="!phoneNumberFormControl?.valid && phoneNumberFormControl?.dirty || isSubmitted">
+          <p *ngIf="phoneNumberFormControl?.errors?.['required']">
+            Este campo es obligatorio
+          </p>
+          <p *ngIf="phoneNumberFormControl?.errors?.['maxlength']">
+            No más de 9 números
+          </p>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">Submit</button>
+    </form>
+
+  </div>
+</div>

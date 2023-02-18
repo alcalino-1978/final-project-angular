@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,12 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'final-ark';
+  title = "Schrödinger's Cat";
   lang = 'es';
-
-  constructor(private translateService: TranslateService) { }
+  isDarkTheme!: Observable<boolean>;
+  constructor(
+    private translateService: TranslateService,
+    ) { }
 
   ngOnInit(): void {
     this.translateService.setDefaultLang(this.lang);
