@@ -3,7 +3,7 @@ export interface CatModelAPI {
   name: string,
   weight: {
     imperial: string,
-    metrical: string
+    metric: string
   },
   temperament: string,
   origin: string,

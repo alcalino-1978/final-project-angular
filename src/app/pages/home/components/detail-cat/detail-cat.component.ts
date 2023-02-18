@@ -11,6 +11,9 @@ import { CatModelAPI } from 'src/app/models/cat.model';
 export class DetailCatComponent {
   public catDetail!: CatModelAPI;
   public isLoading: boolean = false;
+
+  public rating: number = 2;
+  public starCount: number = 5;
   constructor(
     private activatedRouter: ActivatedRoute,
     private catApiService : CatApiService,
@@ -27,7 +30,7 @@ export class DetailCatComponent {
     )
   }
 
-  getCat(id:any): void {
+  getCat(id:number): void {
     this.isLoading = true;
     this.catApiService.getCatId(id).subscribe(
       (response: CatModelAPI) => {

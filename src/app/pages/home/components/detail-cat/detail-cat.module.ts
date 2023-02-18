@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { DetailCatRoutingModule } from './detail-cat-routing.module';
 import { DetailCatComponent } from './detail-cat.component';
+import { RatingComponent } from './rating/rating.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
-    DetailCatComponent
+    DetailCatComponent,
+    RatingComponent
   ],
   imports: [
     CommonModule,
+    MatIconModule,
     DetailCatRoutingModule
   ]
 })

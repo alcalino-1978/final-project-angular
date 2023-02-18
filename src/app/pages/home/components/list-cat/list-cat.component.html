@@ -2,17 +2,17 @@
 
 <ul class="list-cat my-4 d-flex flex-wrap" *ngIf="!isLoading">
   <ng-container *ngFor="let cat of catList">
-    <li class="list-cat__item col-12 col-sm-6 col-md-4" *ngIf="cat.image">
+    <li class="list-cat__item col-12 col-sm-6 col-md-4" *ngIf="cat.image"  (click)="getCatDetail(cat.id)">
       <mat-card class="example-card">
         <mat-card-header class="list-cat__header">
-          <mat-card-title>{{ cat.name }}</mat-card-title>
+          <h3 class="mb-0"><mat-card-title>{{ cat.name }}</mat-card-title></h3>
         </mat-card-header>
         <picture class="list-cat__picture">
           <img class="list-cat__image" mat-card-image [src]="cat.image.url" alt="{{ cat.name }}">
         </picture>
-        <mat-card-actions>
-          <button mat-button (click)="getCatDetail(cat.id)">+ Info</button>
-        </mat-card-actions>
+        <!-- <mat-card-actions>
+          <button mat-button>+ Info</button>
+        </mat-card-actions> -->
       </mat-card>
     </li>
   </ng-container>

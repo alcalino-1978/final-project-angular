@@ -1,0 +1,11 @@
+img {
+  border-radius: 16px;
+}
+strong {
+  font-weight: bold;
+}
+.list-detail {
+  &__item {
+    display: flex;
+  }
+}

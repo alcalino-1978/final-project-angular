@@ -37,14 +37,12 @@
   }
   &__item {
     margin-bottom: 1.5rem;
+    cursor: pointer;
     @include media-breakpoint-up(sm) {
       padding-right: 1.5rem;
       &:last-child {
         padding-right: 0;
       }
     }
-  }
-  button {
-    cursor: pointer;
   }
 }

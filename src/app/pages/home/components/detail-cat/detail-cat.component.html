@@ -1,10 +1,82 @@
-<div *ngIf="catDetail">
-  <p>{{ catDetail.name }}</p>
-  <p>{{ catDetail.id }}</p>
-  <p>{{ catDetail.weight.metrical }}</p>
-  <p>{{ catDetail.origin }}</p>
-  <p>{{ catDetail.description }}</p>
-  <p>{{ catDetail.life_span }}</p>
-  <p>{{ catDetail.adaptability }}</p>
-  <img [src]="'https://cdn2.thecatapi.com/images/'+ catDetail.reference_image_id + '.jpg'">
-</div>
+<ng-container *ngIf="catDetail">
+  <div class="row"><h2 class="display-2">{{ catDetail.name }}</h2></div>
+  <div class="row">
+    <div class="col-12 col-md-6 order-1 order-md-0">
+      <p>{{ catDetail.description }}</p>
+      <p><strong>temperament:</strong>{{ catDetail.temperament }}</p>
+      <ul class="list-detail">
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>Weight:</strong></div>
+          <div class="col">{{ catDetail.weight.metric}} Kg.</div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>Origin:</strong></div>
+          <div class="col">{{ catDetail.origin }}</div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>life_span:</strong></div>
+          <div class="col">{{ catDetail.life_span }}</div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>adaptability:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.adaptability"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>adaptability:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.adaptability"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>affection_level:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.affection_level"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>child_friendly:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.child_friendly"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>dog_friendly:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.dog_friendly"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>energy_level:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.energy_level"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>grooming:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.grooming"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>health_issues:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.health_issues"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>intelligence:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.intelligence"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>shedding_level:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.shedding_level"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>energy_level:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.energy_level"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>social_needs:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.social_needs"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>stranger_friendly:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.stranger_friendly"></app-rating></div>
+        </li>
+        <li class="list-detail__item row">
+          <div class="col-4"><strong>health_issues:</strong></div>
+          <div class="col"><app-rating [rating]="catDetail.health_issues"></app-rating></div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-md-6 order-0 order-md-1 mb-3">
+      <img [src]="'https://cdn2.thecatapi.com/images/'+ catDetail.reference_image_id + '.jpg'">
+    </div>
+  </div>
+</ng-container>
