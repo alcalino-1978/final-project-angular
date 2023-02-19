@@ -7,6 +7,15 @@
 
 @include mat.core();
 
+$my-custom-typography-config: mat.define-typography-config(
+  $headline-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $headline-4: mat.define-typography-level(34px, 40px, 400),
+  $headline-5: mat.define-typography-level(24px, 32px, 400),
+  // ...
+);
+
 $angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);
 $angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
@@ -19,6 +28,7 @@ $angular-default-theme: mat.define-light-theme(
       accent: $angular-accent,
       warn: $angular-warn,
     ),
+    typography: $my-custom-typography-config,
   )
 );
 $angular-dark-theme: mat.define-dark-theme(
@@ -32,6 +42,9 @@ $angular-dark-theme: mat.define-dark-theme(
 );
 @include mat.all-component-themes($angular-default-theme);
 
+$headline: mat.define-typography-level(20px, 27px, 400,);
+
+
 .dark-theme {
   @include mat.all-component-colors($angular-dark-theme);
   background-color: #303030;
@@ -43,12 +56,19 @@ $angular-dark-theme: mat.define-dark-theme(
   background: #F5E9CF;
 }
 
+
 @import url('./styles/_helpers.scss');
-@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
 
 
+@import url('./styles/reset.scss');
+body{
+  margin:0;
 
-body{margin:0;font-family:Roboto, "Helvetica Neue", sans-serif;}
+  font-size: 1.5rem;
+  @media only screen and (min-width: 768px) {
+    font-size: 1.7rem;
+  }
+}
 img {
   width: 100%;
   height: auto;
@@ -62,6 +82,19 @@ img {
 .mat-mdc-card-title {
   font-weight: bold;
 }
-h2, h3, h4, h5{
-  color: #E96479;
-}
+.mat-typography {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.5rem;
+  @media only screen and (min-width: 768px) {
+    font-size: 1.7rem;
+  }
+  .mat-headline-2 {
+    margin-bottom: 3.2rem;
+  }
+[class*="headline"] , .mat-mdc-card-title {
+      font-family: 'Boogaloo', sans-serif;
+      font-family: 'Itim', sans-serif;
+      color: #E96479;
+      font-weight: bold;
+    }
+  }

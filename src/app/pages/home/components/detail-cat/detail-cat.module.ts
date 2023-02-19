@@ -5,6 +5,7 @@ import { DetailCatRoutingModule } from './detail-cat-routing.module';
 import { DetailCatComponent } from './detail-cat.component';
 import { RatingComponent } from './rating/rating.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatIconModule,
+    SharedModule,
     DetailCatRoutingModule
   ]
 })

@@ -1,82 +1,72 @@
 <ng-container *ngIf="catDetail">
-  <div class="row"><h2 class="display-2">{{ catDetail.name }}</h2></div>
+  <div class="row"><h2 class="mat-headline-2">{{ catDetail.name }}</h2></div>
   <div class="row">
     <div class="col-12 col-md-6 order-1 order-md-0">
       <p>{{ catDetail.description }}</p>
-      <p><strong>temperament:</strong>{{ catDetail.temperament }}</p>
+      <p><strong>{{ 'DETAILS.TEMPERAMENT' | translate }}: </strong>{{ catDetail.temperament }}</p>
       <ul class="list-detail">
         <li class="list-detail__item row">
-          <div class="col-4"><strong>Weight:</strong></div>
-          <div class="col">{{ catDetail.weight.metric}} Kg.</div>
+          <div class="col-4"><strong>{{ 'DETAILS.WEIGHT' | translate }}:</strong></div>
+          <div class="col-4">{{ catDetail.weight.metric}} Kg.</div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>Origin:</strong></div>
-          <div class="col">{{ catDetail.origin }}</div>
+          <div class="col-4"><strong>{{ 'DETAILS.ORIGIN' | translate }}:</strong></div>
+          <div class="col-4">{{ catDetail.origin }}</div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>life_span:</strong></div>
-          <div class="col">{{ catDetail.life_span }}</div>
+          <div class="col-4"><strong>{{ 'DETAILS.LIFE-SPAN' | translate }}:</strong></div>
+          <div class="col-4">{{ catDetail.life_span }}</div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>adaptability:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.adaptability"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.ADAPTABILITY' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.adaptability"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>adaptability:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.adaptability"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.AFFECTION-LEVEL' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.affection_level"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>affection_level:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.affection_level"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.CHILD-FRIENDLY' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.child_friendly"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>child_friendly:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.child_friendly"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.DOG-FRIENDLY' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.dog_friendly"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>dog_friendly:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.dog_friendly"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.GROOMING' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.grooming"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>energy_level:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.energy_level"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.HEALTH-ISSUES' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.health_issues"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>grooming:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.grooming"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.INTELLIGENCE' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.intelligence"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>health_issues:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.health_issues"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.SHEDDING-LEVEL' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.shedding_level"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>intelligence:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.intelligence"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.ENERGY-LEVEL' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.energy_level"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>shedding_level:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.shedding_level"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.SOCIAL-NEEDS' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.social_needs"></app-rating></div>
         </li>
         <li class="list-detail__item row">
-          <div class="col-4"><strong>energy_level:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.energy_level"></app-rating></div>
-        </li>
-        <li class="list-detail__item row">
-          <div class="col-4"><strong>social_needs:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.social_needs"></app-rating></div>
-        </li>
-        <li class="list-detail__item row">
-          <div class="col-4"><strong>stranger_friendly:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.stranger_friendly"></app-rating></div>
-        </li>
-        <li class="list-detail__item row">
-          <div class="col-4"><strong>health_issues:</strong></div>
-          <div class="col"><app-rating [rating]="catDetail.health_issues"></app-rating></div>
+          <div class="col-4"><strong>{{ 'DETAILS.STRANGER-FRIENDLY' | translate }}:</strong></div>
+          <div class="col-4"><app-rating [rating]="catDetail.stranger_friendly"></app-rating></div>
         </li>
       </ul>
     </div>
-    <div class="col-12 col-md-6 order-0 order-md-1 mb-3">
-      <img [src]="'https://cdn2.thecatapi.com/images/'+ catDetail.reference_image_id + '.jpg'">
+    <div class="col-12 col-md-6 order-0 order-md-1 mb-5">
+      <picture>
+        <img [src]="'https://cdn2.thecatapi.com/images/'+ catDetail.reference_image_id + '.jpg'">
+      </picture>
     </div>
   </div>
 </ng-container>

@@ -22,4 +22,22 @@
     "FIELD-PASSWORD-STRENGTH": "Password strength:",
     "FIELD-PASSWORD-NOT-MATCH": "Passwords do not match"
   }
+  ,
+  "DETAILS": {
+    "TEMPERAMENT": "Temperament",
+    "ORIGIN": "Origin",
+    "WEIGHT": "Weight",
+    "LIFE-SPAN": "Life span:",
+    "ADAPTABILITY": "Adaptability",
+    "AFFECTION-LEVEL": "Affection level",
+    "CHILD-FRIENDLY": "Child friendly",
+    "DOG-FRIENDLY": "Dog friendly",
+    "GROOMING": "Grooming",
+    "HEALTH-ISSUES": "Health issues",
+    "INTELLIGENCE": "Intelligence",
+    "SHEDDING-LEVEL": "Shedding level",
+    "ENERGY-LEVEL": "Energy level",
+    "SOCIAL-NEEDS": "Social needs",
+    "STRANGER-FRIENDLY": "Stranger friendly"
+  }
 }
