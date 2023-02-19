@@ -1,5 +1,6 @@
 {
   "HELLO": "Hello!",
+  "PREVIOUS-PAGE": "Back",
   "CHARACTER-LIST": {
     "TITLE": "Character list"
   },
@@ -27,7 +28,7 @@
     "TEMPERAMENT": "Temperament",
     "ORIGIN": "Origin",
     "WEIGHT": "Weight",
-    "LIFE-SPAN": "Life span:",
+    "LIFE-SPAN": "Life span",
     "ADAPTABILITY": "Adaptability",
     "AFFECTION-LEVEL": "Affection level",
     "CHILD-FRIENDLY": "Child friendly",

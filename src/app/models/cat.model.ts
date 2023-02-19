@@ -38,3 +38,11 @@ export interface CatModelAPI {
   }
 }
 
+export interface CatModelUnsplashAPI {
+  description: string,
+  urls: {
+    raw: string,
+    full: string
+  }
+}
+

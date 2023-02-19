@@ -17,10 +17,16 @@ strong {
     font-size: 110%;
   }
 }
+
+.detail-data {
+  @media only screen and (min-width: 768px) {
+    padding-right: 3.2rem;
+  }
+}
 picture {
   position: relative;
   display: flex;
-  border-radius: 16px;
+  border-radius: 1.6rem;
   overflow: hidden;
   &::before {
     position: absolute;

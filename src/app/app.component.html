@@ -1,7 +1,7 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}">
   <div class="mat-app-background">
     <app-header (changeLanguage)="setLang($event)"></app-header>
-    <div class="container px-4 my-5">
+    <div class="container px-4 my-5" [ngClass]="url === '' ? 'no-margin-top': ''">
       <router-outlet></router-outlet>
     </div>
   </div>

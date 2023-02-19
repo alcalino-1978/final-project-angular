@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CatApiService } from '@shared/services/catApi.service';
@@ -17,6 +18,7 @@ export class DetailCatComponent {
   constructor(
     private activatedRouter: ActivatedRoute,
     private catApiService : CatApiService,
+    private location: Location
   ) {
 
 
@@ -40,5 +42,8 @@ export class DetailCatComponent {
         console.log('Algo ha petado y estoy en el Componente');
       }
     )
+  }
+  backWithLocation() {
+    this.location.back();
   }
 }

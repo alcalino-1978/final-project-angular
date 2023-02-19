@@ -1,0 +1,11 @@
+  <div class="main-header container" *ngIf="randomImageUrl" [ngStyle]="{'background-image': 'url(' + randomImageUrl + ')'}">
+    <div class="row flex-xs__column padding__sm flex-lg__row flex__align-items-middle">
+      <div class=" text__align-center col-12">
+        <h1 class="title title-md margin-vertical__sm text__upper-case">Photo Search</h1>
+        <div class="main-header__block-main">
+          <div class="logo"><img src=""></div>
+          <form class="search"><input id="photoFinder" class="search-input js-search-input"
+              placeholder="Search photo" autofocus=""></form>
+        </div>
+      </div>
+  </div>

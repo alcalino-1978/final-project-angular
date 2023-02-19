@@ -1,7 +1,8 @@
 <ng-container *ngIf="catDetail">
+  <a (click)="backWithLocation()" class="mb-5 d-flex">< {{ 'PREVIOUS-PAGE' | translate }}</a>
   <div class="row"><h2 class="mat-headline-2">{{ catDetail.name }}</h2></div>
   <div class="row">
-    <div class="col-12 col-md-6 order-1 order-md-0">
+    <div class="col-12 col-md-6 order-1 order-md-0 detail-data">
       <p>{{ catDetail.description }}</p>
       <p><strong>{{ 'DETAILS.TEMPERAMENT' | translate }}: </strong>{{ catDetail.temperament }}</p>
       <ul class="list-detail">

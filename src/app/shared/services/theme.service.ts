@@ -7,27 +7,7 @@ export type Theme = 'light-theme' | 'dark-theme';
 @Injectable({
   providedIn: 'root'
 })
-// export class ThemeService {
-//   private _darkTheme = new Subject<boolean>();
-//   private renderer!: Renderer2;
-//   isDarkTheme = this._darkTheme.asObservable();
 
-//   constructor(@Inject(DOCUMENT) private document: Document) {}
-
-//   setDarkTheme(isDarkTheme: boolean): void {
-//     this._darkTheme.next(isDarkTheme);
-//     debugger
-//   }
-//   ngAfterViewInit() {
-//     if (this.isDarkTheme === true) {
-//       console.log('Enable Dark Mode')
-//       this.renderer.addClass(document.body, 'dark-mode');
-//     } else {
-//       console.log('Disable Dark Mode')
-//       this.renderer.removeClass(document.body, 'dark-mode');
-//     }
-//   }
-// }
 export class ThemeToggler {
   currentTheme: Theme = 'light-theme';
 

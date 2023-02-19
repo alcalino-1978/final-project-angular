@@ -73,6 +73,9 @@ img {
   width: 100%;
   height: auto;
 }
+a {
+  cursor: pointer;
+}
 .mat-form-field{width:100%;}
 .misc-bottom-padding{margin:8px 0 20px;}
 .misc-bottom-padding mat-label{margin-right:15px;}
@@ -97,4 +100,26 @@ img {
       color: #E96479;
       font-weight: bold;
     }
+    [class*="headline"] {
+      color: #E96479;
+      background: linear-gradient(to right, #E96479 0%, #4D455D 15%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-bottom: 0.8rem;
+    }
   }
+
+.lang-es {
+  .button-lang__es span {
+    font-weight: bold;
+  }
+}
+.lang-en{
+  .button-lang__en span{
+    font-weight: bold;
+  }
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
