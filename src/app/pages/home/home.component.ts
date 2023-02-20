@@ -8,7 +8,7 @@ import { Component, ElementRef, HostBinding } from '@angular/core';
 })
 export class HomeComponent {
   public isLoading: boolean = false;
-  containerClasses = "no-margin-top";
+  containerClasses = "home";
 
   constructor(private elRef:ElementRef) { }
   ngAfterViewInit() {

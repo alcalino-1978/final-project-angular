@@ -1,28 +1,26 @@
-<p>profile works!</p>
-<div class="container" *ngIf="currentUser; else loggedOut">
-  <header class="jumbotron">
-    <h3>
-      <strong>{{ currentUser.name }} {{ currentUser.lastName }}</strong> Profile
-    </h3>
-  </header>
-  <p>
-    <strong>Email:</strong>
-    {{ currentUser.email }}
-  </p>
-  <p>
-    <strong>Phone:</strong>
-    {{ currentUser.phoneNumber }}
-  </p>
-  <p>
-    <strong>UpdateAt:</strong>
-    {{ currentUser.updatedAt }}
-  </p>
-  <!-- <strong>Roles:</strong>
-  <ul>
-    <li *ngFor="let role of currentUser.roles">
-      {{ role }}
-    </li>
-  </ul> -->
+<div class="row">
+  <a routerLink="/" class="mb-5 d-flex">< {{ 'PREVIOUS-PAGE-HOME' | translate }}</a>
+  <div class="col-12 col-md-4 offset-md-4">
+    <h2 class="mat-headline-3 cat-title -gradient">{{ 'FORMS.TITLE.PROFILE' | translate }}</h2>
+    <div class="container" *ngIf="currentUser; else loggedOut">
+      <p>
+        <strong>{{ 'FORMS.NAME' | translate }}:</strong>
+        {{ currentUser.name }}
+      </p>
+      <p>
+        <strong>{{ 'FORMS.LASTNAME' | translate }}:</strong>
+        {{ currentUser.lastName }}
+      </p>
+      <p>
+        <strong>{{ 'FORMS.EMAIL' | translate }}:</strong>
+        {{ currentUser.email }}
+      </p>
+      <p>
+        <strong>{{ 'FORMS.PHONE-NUMBER' | translate }}:</strong>
+        {{ currentUser.phoneNumber }}
+      </p>
+    </div>
+  </div>
 </div>
 
 <ng-template #loggedOut>

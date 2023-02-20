@@ -25,7 +25,13 @@
       <button mat-menu-item [routerLink]="['/profile']">
         <span>{{ 'MAIN-MENU.PROFILE' | translate }}</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item *ngIf="storageService.isLoggedIn() === false" routerLink="/login">
+        <span>{{ 'MAIN-MENU.LOGIN' | translate }}</span>
+      </button>
+      <button mat-menu-item  *ngIf="storageService.isLoggedIn() === false" routerLink="/register">
+        <span>{{ 'MAIN-MENU.REGISTER' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="logOut()" *ngIf="storageService.isLoggedIn() === true" routerLink="/login">
         <span>{{ 'MAIN-MENU.LOGOUT' | translate }}</span>
       </button>
     </mat-menu>

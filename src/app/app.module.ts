@@ -20,6 +20,7 @@ import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ThemeToggler } from '@shared/services/theme.service';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ThemeToggler } from '@shared/services/theme.service';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
+    SharedModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

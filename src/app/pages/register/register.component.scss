@@ -1,0 +1,35 @@
+.strength {
+  display: flex;
+
+  .level {
+    display: inline-block;
+    height: 12px;
+    width: 50px;
+    background-color: red;
+
+    & + .level {
+      margin-left: 2px;
+    }
+  }
+
+  &.low {
+    .level {
+      background-color: orange;
+    }
+  }
+
+  &.mid {
+    .level {
+      background-color: yellow;
+    }
+  }
+
+  &.hight {
+    .level {
+      background-color: green;
+    }
+  }
+}
+
+
+

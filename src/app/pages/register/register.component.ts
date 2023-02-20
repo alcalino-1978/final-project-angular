@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '@shared/services/auth.service';
 import { StorageService } from '@shared/services/storage.service';
-import { passwordPattern, emailRegx } from '@utils/validators';
+import { passwordPattern, emailRegx, comparePassword, checkPasswordStrength } from '@utils/validators';
 
 @Component({
   selector: 'app-register',
@@ -49,15 +49,26 @@ export class RegisterComponent {
       lastName: ['', [Validators.required, Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.pattern(emailRegx)]],
       password: ['', [Validators.required, Validators.pattern(passwordPattern)]],
+      passwordRepeat: ['', [Validators.required, ]],
       phoneNumber: ['', [Validators.required, Validators.maxLength(9)]],
-    }),
+    },
+    {
+      validator: comparePassword('password', 'passwordRepeat')
+    });
 
     // FormControls
     this.nameFormControl = this.userLoginForm.get('name') as FormControl;
     this.lastNameFormControl = this.userLoginForm.get('lastName') as FormControl;
     this.emailFormControl = this.userLoginForm.get('email') as FormControl;
     this.passwordFormControl = this.userLoginForm.get('password') as FormControl;
+    this.passwordRepeatFormControl = this.userLoginForm.get('passwordRepeat') as FormControl;
     this.phoneNumberFormControl = this.userLoginForm.get('phoneNumber') as FormControl;
+
+    // Reactive control (RxJS)
+    this.passwordFormControl.valueChanges.subscribe((change) => {
+      this.strength = checkPasswordStrength(change);
+    });
+
   }
 
   onSubmit() {
@@ -69,14 +80,14 @@ export class RegisterComponent {
 
       const user = {
         name: this.nameFormControl.value,
-        lastName: this.nameFormControl.value,
+        lastName: this.lastNameFormControl.value,
         email: this.emailFormControl.value,
         password: this.passwordFormControl.value,
         phoneNumber: this.phoneNumberFormControl.value,
       }
 
       // console.log(user);
-      this.authService.register(user.email, user.lastName, user.email, user.password, user.phoneNumber).subscribe({
+      this.authService.register(user.name, user.lastName, user.email, user.password, user.phoneNumber).subscribe({
         next: response => {
           this.isSuccessful = true;
           this.isSignUpFailed = false;
@@ -85,6 +96,8 @@ export class RegisterComponent {
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           // console.log(response)
+          this.userLoginForm.reset();
+          this.isLoading = false;
           this.router.navigate(['/profile']);
         },
         error: err => {
@@ -92,10 +105,6 @@ export class RegisterComponent {
           this.isSignUpFailed = true;
         }
       });
-      setTimeout(() => {
-        this.userLoginForm.reset();
-        this.isLoading = false;
-      }, 3000);
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '@shared/services/storage.service';
+import { UserModelAPI } from '../../models/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,7 @@ import { StorageService } from '@shared/services/storage.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  currentUser: any;
+  currentUser!: UserModelAPI;
 
   constructor(private storageService: StorageService) { }
 

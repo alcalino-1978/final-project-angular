@@ -56,7 +56,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.isSubmitted = true;
-    console.log(this.userLoginForm);
 
     if (this.userLoginForm.valid) {
       this.isLoading = true;
@@ -73,7 +72,6 @@ export class LoginComponent implements OnInit {
 
           this.isLoginFailed = false;
           this.isLoggedIn = true;
-          console.log(response)
           this.router.navigate(['/profile']);
           // this.reloadPage();
         },
