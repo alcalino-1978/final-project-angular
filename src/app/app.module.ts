@@ -21,6 +21,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ThemeToggler } from '@shared/services/theme.service';
 import { SharedModule } from '@shared/shared.module';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SharedModule } from '@shared/shared.module';
     SharedModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
     MatButtonModule,
     MatPseudoCheckboxModule,
     ReactiveFormsModule

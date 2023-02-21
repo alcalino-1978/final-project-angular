@@ -24,6 +24,8 @@
     "PASSWORD": "Password",
     "REPASSWORD": "Repeat password",
     "PHONE-NUMBER": "Phone Number",
+    "UPDATE": "Update user",
+    "DELETE": "Delete user",
     "SUBMIT": "Submit",
     "FIELD-REQUIRED": "This field is required",
     "FIELD-PASSWORD": "The password must contain at least 8 characters, one uppercase, one lowercase and one number",

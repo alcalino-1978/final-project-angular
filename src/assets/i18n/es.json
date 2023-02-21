@@ -24,6 +24,8 @@
     "PASSWORD": "Contraseña",
     "REPASSWORD": "Repetir contraseña",
     "PHONE-NUMBER": "Teléfono",
+    "UPDATE": "Modificar usuario",
+    "DELETE": "Borrar usuario",
     "SUBMIT": "Enviar",
     "FIELD-REQUIRED": "Este campo es obligatorio",
     "FIELD-PASSWORD": "La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número",

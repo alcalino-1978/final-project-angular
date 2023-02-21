@@ -20,6 +20,11 @@
         {{ currentUser.phoneNumber }}
       </p>
     </div>
+    <mat-divider></mat-divider>
+    <div class="my-5 d-flex justify-content-between">
+      <button mat-raised-button color="primary">{{ 'FORMS.UPDATE' | translate }}</button>
+      <button mat-raised-button color="warn" (click)="deleteUser()">{{ 'FORMS.DELETE' | translate }}</button>
+    </div>
   </div>
 </div>
 

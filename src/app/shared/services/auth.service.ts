@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { UserModelAPI } from 'src/app/models/user.model';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({
@@ -39,7 +39,14 @@ export class AuthService {
     );
   }
 
-  logout(): Observable<UserModelAPI> {
+  logoutService(): Observable<UserModelAPI> {
     return this.http.post<UserModelAPI>(environment.urlUsers + 'logout', { }, httpOptions);
+  }
+
+  deleteUserService(email: string): Observable<any> {
+    debugger
+    const url = `http://localhost:3000/users/delete`;
+    const body = { email: email };
+    return this.http.delete(url, { body: body });
   }
 }

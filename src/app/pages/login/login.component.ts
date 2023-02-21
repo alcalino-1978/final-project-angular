@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   public isLoggedIn = false;
   public isLoginFailed = false;
   public errorMessage = '';
-  public roles: string[] = [];
 
 	constructor(
     private formBuilder: FormBuilder,
@@ -38,7 +37,6 @@ export class LoginComponent implements OnInit {
     this.initForm();
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
     }
   }
 
@@ -65,11 +63,11 @@ export class LoginComponent implements OnInit {
         password: this.passwordFormControl.value,
       }
 
-      console.log(user);
       this.authService.login(user.email, user.password).subscribe({
         next: response => {
           this.storageService.saveUser(response.data.user);
-
+          this.storageService.saveToken(response.data);
+          console.log(this.storageService.getUser())
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.router.navigate(['/profile']);

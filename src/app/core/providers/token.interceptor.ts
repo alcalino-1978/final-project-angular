@@ -7,16 +7,22 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { StorageService } from '@shared/services/storage.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor() {}
+
+  constructor(
+    private storageService: StorageService
+  ) { }
 
   intercept(
     req: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const token: string = environment.USER_API_KEY as string;
+    const token: string = localStorage.getItem('token') as string;
+    console.log('token interceptor:', token)
+
     let request = req;
     if (token) {
       request = req.clone({

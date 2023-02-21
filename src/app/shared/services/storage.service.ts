@@ -10,11 +10,17 @@ export class StorageService {
 
   clean(): void {
     window.sessionStorage.clear();
+    localStorage.clear();
   }
 
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+  public saveToken(user: any): void {
+    localStorage.removeItem('token');
+    localStorage.setItem('token', user.token);
+    console.log(localStorage.getItem('token'));
   }
 
   public getUser(): any {

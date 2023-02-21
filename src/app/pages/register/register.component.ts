@@ -92,6 +92,7 @@ export class RegisterComponent {
           this.isSuccessful = true;
           this.isSignUpFailed = false;
           this.storageService.saveUser(response.data.userDb);
+          this.storageService.saveToken(response.data);
 
           this.isLoginFailed = false;
           this.isLoggedIn = true;

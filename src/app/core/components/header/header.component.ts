@@ -67,7 +67,7 @@ export class HeaderComponent {
 
   // LogOut
   logOut(): void {
-    this.authService.logout();
+    this.authService.logoutService();
     this.storageService.clean();
     this.router.navigate(['/login'])
     // if (this.storageService.isLoggedIn()) {
