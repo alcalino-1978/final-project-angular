@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostBinding } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   public isLoading: boolean = false;
+  containerClasses = "home";
 
-  constructor() { }
-
+  constructor(private elRef:ElementRef) { }
+  ngAfterViewInit() {
+    this.elRef.nativeElement.parentElement.classList.add(this.containerClasses);
+  }
   ngOnInit(): void {
     this.getListItems();
   }
@@ -21,4 +25,5 @@ export class HomeComponent {
       this.isLoading = false;
     }, 2000);
   }
+
 }

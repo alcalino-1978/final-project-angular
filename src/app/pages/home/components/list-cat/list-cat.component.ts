@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { RequestService } from '@shared/services/request.service';
+import { CatApiService } from '@shared/services/catApi.service';
 import { CatModelAPI } from '../../../../models/cat.model';
 import { Router } from '@angular/router';
+import { TranslatorService } from '@shared/services/translator.service';
 
 @Component({
   selector: 'app-list-cat',
@@ -13,22 +14,25 @@ export class ListCatComponent {
   isLoading: boolean = false;
 
   constructor(
-    private requestService : RequestService,
-    private router: Router
+    private catApiService : CatApiService,
+    private router: Router,
+    // private translatorService: TranslatorService,
+
   ) {}
 
   ngOnInit(): void {
     this.getCatList();
+    // this.translatorService.translateMessage('ME GUSTA MÁS ÁNGULAR QUE REACT')
   }
 
   private getCatList(): void {
     this.isLoading = true;
-    this.requestService.getCats().subscribe(
+    this.catApiService.getCats().subscribe(
       (response: CatModelAPI[]) => {
         this.catList = response;
+        // console.log(response)
         this.isLoading = false;
       }, (error) => {
-        console.log('Algo ha petado y estoy en el Componente');
       });
   }
   getCatDetail(id:any){

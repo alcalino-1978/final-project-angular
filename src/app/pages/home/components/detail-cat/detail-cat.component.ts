@@ -1,6 +1,7 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RequestService } from '@shared/services/request.service';
+import { CatApiService } from '@shared/services/catApi.service';
 import { CatModelAPI } from 'src/app/models/cat.model';
 
 @Component({
@@ -11,9 +12,13 @@ import { CatModelAPI } from 'src/app/models/cat.model';
 export class DetailCatComponent {
   public catDetail!: CatModelAPI;
   public isLoading: boolean = false;
+
+  public rating: number = 2;
+  public starCount: number = 5;
   constructor(
     private activatedRouter: ActivatedRoute,
-    private requestService : RequestService,
+    private catApiService : CatApiService,
+    private location: Location
   ) {
 
 
@@ -27,9 +32,9 @@ export class DetailCatComponent {
     )
   }
 
-  getCat(id:any): void {
+  getCat(id:number): void {
     this.isLoading = true;
-    this.requestService.getCatId(id).subscribe(
+    this.catApiService.getCatId(id).subscribe(
       (response: CatModelAPI) => {
         this.catDetail = response;
         this.isLoading = false;
@@ -37,5 +42,8 @@ export class DetailCatComponent {
         console.log('Algo ha petado y estoy en el Componente');
       }
     )
+  }
+  backWithLocation() {
+    this.location.back();
   }
 }

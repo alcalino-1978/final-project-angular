@@ -3,7 +3,7 @@ export interface CatModelAPI {
   name: string,
   weight: {
     imperial: string,
-    metrical: string
+    metric: string
   },
   temperament: string,
   origin: string,
@@ -35,6 +35,18 @@ export interface CatModelAPI {
     width: number,
     height: number,
     url: string
+  }
+}
+
+export interface CatModelUnsplashAPI {
+  description: string,
+  urls: {
+    raw: string,
+    full: string,
+    regular: string,
+    small: string,
+    thumb: string,
+    small_s3: string
   }
 }
 

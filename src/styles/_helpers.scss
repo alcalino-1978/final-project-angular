@@ -6,3 +6,12 @@
 .align-items-center {
   align-items: center;
 }
+
+.position-relative {
+  position: relative;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
