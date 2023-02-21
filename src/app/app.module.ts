@@ -22,6 +22,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ThemeToggler } from '@shared/services/theme.service';
 import { SharedModule } from '@shared/shared.module';
 import { MatDividerModule } from '@angular/material/divider';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatDividerModule } from '@angular/material/divider';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
+    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,

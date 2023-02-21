@@ -16,6 +16,7 @@
     "TITLE": {
       "LOGIN": "Inicie sesión",
       "REGISTER": "Registro nuevo usuario",
+      "UPDATE-USER": "Actualizar usuario",
       "PROFILE": "Perfil"
     },
     "NAME": "Nombre",

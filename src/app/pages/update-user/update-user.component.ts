@@ -6,11 +6,11 @@ import { StorageService } from '@shared/services/storage.service';
 import { passwordPattern, emailRegx } from '@utils/validators';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-update-user',
+  templateUrl: './update-user.component.html',
+  styleUrls: ['./update-user.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class UpdateUserComponent {
   public strength = 0;
 
   public userLoginForm!: FormGroup;
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         next: response => {
           this.storageService.saveUser(response.data.user);
           this.storageService.saveToken(response.data);
-          // console.log(this.storageService.getUser())
+          console.log(this.storageService.getUser())
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.router.navigate(['/profile']);
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
         },
         error: err => {
           this.errorMessage = err.error.message;
-          // console.log(err.error.message)
+          console.log(err.error.message)
           this.isLoginFailed = true;
         }
       });

@@ -26,7 +26,7 @@ export class BannerHeroComponent {
       (response: CatModelUnsplashAPI) => {
         this.catRandom= response;
         this.randomImageUrl= this.catRandom.urls.regular;
-        console.log(response.urls.full)
+        // console.log(response.urls.full)
         this.isLoading = false;
       }, (error) => {
       });

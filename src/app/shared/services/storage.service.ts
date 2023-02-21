@@ -20,7 +20,7 @@ export class StorageService {
   public saveToken(user: any): void {
     localStorage.removeItem('token');
     localStorage.setItem('token', user.token);
-    console.log(localStorage.getItem('token'));
+    // console.log(localStorage.getItem('token'));
   }
 
   public getUser(): any {

@@ -40,12 +40,12 @@ export class HeaderComponent {
   ngAfterViewInit(): void {
     if (this.translate.currentLang == 'es') {
       this.document.body.classList.add('lang-es');
-      console.log(this.translate.currentLang);
+      // console.log(this.translate.currentLang);
     }
   }
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
-    console.log(this.currentUser)
+    // console.log(this.currentUser)
 
   }
   // Cambio de Idioma
@@ -73,6 +73,6 @@ export class HeaderComponent {
     // if (this.storageService.isLoggedIn()) {
     //   this.isLoggedIn = false;
     // }
-    console.log(typeof this.currentUser)
+    // console.log(typeof this.currentUser)
   }
 }

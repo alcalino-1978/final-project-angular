@@ -30,7 +30,7 @@ export class ListCatComponent {
     this.catApiService.getCats().subscribe(
       (response: CatModelAPI[]) => {
         this.catList = response;
-        console.log(response)
+        // console.log(response)
         this.isLoading = false;
       }, (error) => {
       });

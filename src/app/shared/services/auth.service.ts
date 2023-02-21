@@ -27,7 +27,7 @@ export class AuthService {
 
   register(name: string, lastName: string, email: string, password: string, phoneNumber: string): Observable<any> {
     return this.http.post<any>(
-      environment.urlUsers + 'register',
+      environment.urlUsers + 'register/',
       {
         name,
         lastName,
@@ -44,8 +44,7 @@ export class AuthService {
   }
 
   deleteUserService(email: string): Observable<any> {
-    debugger
-    const url = `http://localhost:3000/users/delete`;
+    const url = environment.urlUsers + 'delete';
     const body = { email: email };
     return this.http.delete(url, { body: body });
   }

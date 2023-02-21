@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   }
   // Delete User
   deleteUser(): void {
-    console.log(this.currentUser)
+    // console.log(this.currentUser)
     this.authService.deleteUserService(this.currentUser.email).subscribe(
       response => {
         console.log(response); // Handle successful response

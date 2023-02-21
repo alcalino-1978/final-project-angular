@@ -73,7 +73,7 @@ export class RegisterComponent {
 
   onSubmit() {
     this.isSubmitted = true;
-    console.log(this.userLoginForm);
+    // console.log(this.userLoginForm);
 
     if (this.userLoginForm.valid) {
       this.isLoading = true;
