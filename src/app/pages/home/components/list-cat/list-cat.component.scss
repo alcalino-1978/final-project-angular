@@ -36,10 +36,10 @@
     transition: all .3s ease-in-out;
   }
   &__item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.4rem;
     cursor: pointer;
     @include media-breakpoint-up(sm) {
-      padding-right: 1.5rem;
+      padding-right: 2.4rem;
       &:last-child {
         padding-right: 0;
       }
@@ -48,5 +48,6 @@
   [class*="headline"],
   .mat-mdc-card-title {
     color: #E96479;
+    margin-bottom: 0.8rem;
   }
 }

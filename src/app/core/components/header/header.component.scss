@@ -11,11 +11,16 @@
     margin-left: 0.4rem;
   }
   .main-header__logo {
-    width: 30px;
-    height: 32px;
+    width: 42px;
+    height: 47px;
     overflow: hidden;
     &-img {
       width: 100%;
+    }
+  }
+  .account {
+    @media only screen and (min-width:768px) {
+      margin-right: 1.6rem;
     }
   }
 }
@@ -26,4 +31,9 @@
     height: auto;
     font-size: 16px;
   }
+}
+.mat-mdc-icon-button.mat-mdc-button-base {
+  width: 43px;
+  height: 43px;
+  padding: 8px;
 }
